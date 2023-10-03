@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Supervisor" icon-name="standard:people">
+        <!--show supervior when bear is loaded-->
+        <template if:true={bear.data}>
+            <lightning-record-form
+                object-api-name="Contact"
+                record-id={SupervisorId}
+                layout-type="Compact">
+            </lightning-record-form>
+        </template>
+        <!--When data faild to load-->
+        <template if:true={bear.error}>
+            <div class="sids-text-color_error">
+                An error occurred when loading the bear record
+            </div>
+        </template>
+    </lightning-card>
+</template>
